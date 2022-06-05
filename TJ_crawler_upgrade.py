@@ -1,4 +1,4 @@
-import sys
+ import sys
 sys.path.insert(0, '/user/lib/chromium-browser/chromedriver')
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
@@ -45,7 +45,9 @@ search_end_date.click()
 search = browser.find_element_by_xpath(f'//*[@id="searchPopular"]/form/ul[9]/li/a/img')
 search.click()
 
-
 for i in range(2,102):
+  grade = browser.find_element_by_xpath(f'//*[@id="BoardType1"]/table/tbody/tr[{i}]/td[1]').text
+  number = browser.find_element_by_xpath(f'//*[@id="BoardType1"]/table/tbody/tr[{i}]/td[2]').text
   title = browser.find_element_by_xpath(f'//*[@id="BoardType1"]/table/tbody/tr[{i}]/td[3]').text
-  print(title)
+  artist = browser.find_element_by_xpath(f'//*[@id="BoardType1"]/table/tbody/tr[{i}]/td[4]').text
+  print(grade, number, title, artist)
