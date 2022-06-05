@@ -22,7 +22,7 @@ browser = webdriver.Chrome('chromedriver', options=options)
 url = 'http://tjmedia.com/tjsong/song_monthPopular.asp'
 browser.get(url)
 
-for i in range(2,101):
+for i in range(2,102):
   grade = browser.find_element_by_xpath(f'//*[@id="BoardType1"]/table/tbody/tr[{i}]/td[1]').text
   number = browser.find_element_by_xpath(f'//*[@id="BoardType1"]/table/tbody/tr[{i}]/td[2]').text
   title = browser.find_element_by_xpath(f'//*[@id="BoardType1"]/table/tbody/tr[{i}]/td[3]').text
